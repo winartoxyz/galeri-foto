@@ -100,7 +100,7 @@ h1 {
 
 
 .overlay:target img {
-    animation: zoomAndFade 1s;
+    animation: fadeAja 1s;
 }
 
 .overlay .close {
@@ -121,7 +121,41 @@ h1 {
     animation: slideDownFade .5s .5s forwards;
 }
 
+.overlay:target .next,
+.overlay:target .prev {
+    animation: fadeAja 0.5s 0.5s forwards;
+}
+
+/* navigasi */
+.next,
+.prev {
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/next.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 50%;
+    margin-left: 50px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../img/back.png);
+    margin-left: -100px;
+
+}
+
 /* animasi */
+@keyframes fadeAja {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes zoomAndFade {
     0% {
         transform: scale(0);
